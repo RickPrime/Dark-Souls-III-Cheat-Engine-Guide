@@ -1,0 +1,21 @@
+[ENABLE]
+{$lua}
+if not syntaxcheck then
+local Effect = {
+{120840,0x128,"08 D8 01 00"},
+}
+
+local Weapon = {
+{13250000,0x4c,"08 D8 01 00"}
+}
+ParamIterator("EquipParamWeapon",Weapon,"CrystalChimeDefault")
+ParamIterator("SpEffectParam",Effect,"SunnypoiseDefault")
+end
+
+{$asm}
+[DISABLE]
+{$lua}
+if not syntaxcheck then
+ParamDepatcher("CrystalChimeDefault")
+ParamDepatcher("SunnypoiseDefault")
+end
